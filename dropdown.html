@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>    <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JQuery</title>
+        <script>
+            function format()
+    {   
+       let t=document.getElementById("i1").value
+        let op = document.getElementById("op").value
+
+        let result 
+        switch(op)
+        {
+            case 'B' : result=`<b>${t}</b>`; break; 
+            case 'I' : result=`<i>${t}</i>`;; break;
+            case 'U' :result= `<u>${t}</u>`;; break;
+            case 'BIU' :result=`<b><u><i>${t}</b></u></i>`;break;
+        }
+       
+        document.getElementById("sp1").innerHTML = result
+        //document.getElementById("sp1").innerText = outputstr
+
+    }
+        </script>
+        </head>
+<body>
+    <p>Select dropdown</p>
+    Enter text:<input type="text" id="i1">
+    Select dropdown : <select id="op" onchange="format()">
+        <option>select op</option>
+        <option>B</option>
+        <option>I</option>
+        <option>U</option>
+        <option>BIU</option>
+    </select>
+    <p>The result is <span id="sp1"></span></p>
+</body>
+    </html>
